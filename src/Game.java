@@ -12,4 +12,9 @@ public class Game
         choice = scan.nextLine();
         Player player2 = new Player(choice);
     }
+
+    public void theGame()
+    {
+
+    }
 }

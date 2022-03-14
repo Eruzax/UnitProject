@@ -9,6 +9,7 @@ public class Board
     {
         numRows = rows;
         numCols = cols;
-        Board = new Array[numRows][numCols];
+        Board = new Array[rows][cols];
+        for(int i = )
     }
 }
