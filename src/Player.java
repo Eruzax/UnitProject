@@ -16,6 +16,10 @@ public class Player
         playerBoard = new Board(7, 7);
     }
 
+    public Board getPlayerBoard() {
+        return playerBoard;
+    }
+
     public void turn()
     {
         System.out.println("Where do you want to attack? (letter, number)");
@@ -32,7 +36,7 @@ public class Player
 
         for(int i = col; i < boat.getLength(); i++)
         {
-            playerBoard[row][i]
+            playerBoard[row][i] =
         }
     }
 }

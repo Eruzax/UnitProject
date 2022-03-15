@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 public class Board
 {
-    private Array[][] Board;
+    private Space [][] gameBoard;
     private int numRows;
     private int numCols;
 
@@ -9,7 +9,19 @@ public class Board
     {
         numRows = rows;
         numCols = cols;
-        Board = new Array[rows][cols];
-        for(int i = )
+        gameBoard = new Space[rows][cols];
+
+    }
+
+    public void makeBoard()
+    {
+        for(int i = 0; i < numRows; i++)
+        {
+            for (int j = 0; j < numCols; j++)
+            {
+                Space s = new Space();
+                gameBoard[i][j] = s;
+            }
+        }
     }
 }
