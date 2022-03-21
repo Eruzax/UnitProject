@@ -33,9 +33,15 @@ public class Player
         String choice = scan.nextLine();
     }
 
-    public void takeHit(int row, int col)
+    public void takeHit(int row, int col, boolean h)
     {
-        playerBoard
+        if (playerBoard[row][col].containsShip())
+        playerBoard[row][col].setHit(h);
+    }
+
+    public void attack(int row, int col)
+    {
+        enemyBoard[row][col].
     }
 
     public void drawShip(Boat boat, int row, int col)
@@ -43,7 +49,7 @@ public class Player
 
         for(int i = col; i < boat.getLength(); i++)
         {
-            playerBoard[row][i] =
+            playerBoard[row][i].setContainsBoat(true);
         }
     }
 }

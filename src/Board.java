@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 public class Board
 {
-    private Space [][] gameBoard;
+    private Space[][] gameBoard;
     private int numRows;
     private int numCols;
 

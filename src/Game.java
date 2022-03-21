@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Game
 {
     private Scanner scan = new Scanner(System.in);
-    public void welcome()
+    public void start()
     {
         System.out.println("Welcome to BattleShip!");
         System.out.println("Player 1 enter your name: ");
