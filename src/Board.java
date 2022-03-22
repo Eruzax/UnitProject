@@ -1,6 +1,10 @@
 import java.lang.reflect.Array;
 public class Board
 {
+    public Space[][] getGameBoard() {
+        return gameBoard;
+    }
+
     private Space[][] gameBoard;
     private int numRows;
     private int numCols;
