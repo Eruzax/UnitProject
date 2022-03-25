@@ -11,7 +11,6 @@ public class Space
     {
         empty = true;
         hit = false;
-        miss = false;
         containsBoat = false;
     }
 
@@ -25,10 +24,6 @@ public class Space
         return hit;
     }
 
-    public boolean getMiss()
-    {
-        return miss;
-    }
 
     public boolean containsBoat()
     {
@@ -45,8 +40,4 @@ public class Space
         hit = h;
     }
 
-    public void setMiss(boolean m)
-    {
-        miss = m;
-    }
 }
