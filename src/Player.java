@@ -33,10 +33,16 @@ public class Player
         String choice = scan.nextLine();
     }
 
-    public void takeHit(int row, int col, boolean h)
+    public void takeHit(int row, int col)
     {
         if (playerBoard.getGameBoard()[row][col].containsBoat())
-        playerBoard.getGameBoard()[row][col].setHit(h);
+        {
+            playerBoard.getGameBoard()[row][col].setHit(true);
+        }
+        else
+        {
+            playerBoard.getGameBoard()[row][col].setHit(false);
+        }
     }
 
     public void attack(int row, int col)
@@ -44,12 +50,16 @@ public class Player
         if (enemyBoard.getGameBoard()[row][col].containsBoat())
         {
             enemyBoard.getGameBoard()[row][col].setHit(true);
+            System.out.println("HIT!");
+        }
+        else
+        {
+            enemyBoard.getGameBoard()[row][col].setHit(false);
         }
     }
 
     public void drawShip(Boat boat, int row, int col)
     {
-
         for(int i = col; i < boat.getLength(); i++)
         {
             playerBoard.getGameBoard()[row][i].setContainsBoat(true);
