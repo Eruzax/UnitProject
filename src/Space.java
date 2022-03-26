@@ -34,7 +34,10 @@ public class Space
     {
         return containsBoat;
     }
-
+    public void setEmpty(boolean e)
+    {
+        empty = e;
+    }
     public void setContainsBoat(boolean b)
     {
         containsBoat = b;
