@@ -15,11 +15,6 @@ public class Space
         containsBoat = false;
     }
 
-    public boolean getMiss()
-    {
-        return miss;
-    }
-
     public boolean getEmpty()
     {
         return empty;
@@ -30,19 +25,14 @@ public class Space
         return hit;
     }
 
+    public boolean getMiss()
+    {
+        return miss;
+    }
+
     public boolean containsBoat()
     {
         return containsBoat;
-    }
-
-    public void setMiss(boolean m)
-    {
-        miss = m;
-    }
-
-    public void setEmpty(boolean e)
-    {
-        empty = e;
     }
 
     public void setContainsBoat(boolean b)
@@ -55,4 +45,8 @@ public class Space
         hit = h;
     }
 
+    public void setMiss(boolean m)
+    {
+        miss = m;
+    }
 }
