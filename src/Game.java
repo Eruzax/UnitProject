@@ -42,7 +42,7 @@ public class Game
             player1.attack(player2.getPlayerBoard(), p1Row, p1col);
             player2.takeHit(p1Row, p1col);
             p2DeadShips = checkDeadShips(player2);
-
+            System.out.println("p2 dead ships: " + p2DeadShips);
             if (p2DeadShips == 5)
             {
                 System.out.println(player1.getName() + " Wins!");
@@ -63,6 +63,7 @@ public class Game
             player2.attack(player1.getPlayerBoard(), p2Row, p2Col);
             player1.takeHit(p2Row, p2Col);
             p1DeadShips = checkDeadShips(player1);
+            System.out.println("p1 dead ships: " + p1DeadShips);
             if (p1DeadShips == 5)
             {
                 System.out.println(player2.getName() + " Wins!");

@@ -137,7 +137,7 @@ public class Board
                 {
                     if(i == 0 && j == 0)
                     {
-                        System.out.print("   | ");
+                        System.out.print("    | ");
                     }
                     else if (i == 0)
                     {

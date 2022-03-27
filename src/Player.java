@@ -17,7 +17,7 @@ public class Player
 
     public Player(String n)
     {
-        hitSpots = new ArrayList<>();
+        hitSpots = new ArrayList<Space>();
         name = n;
         playerBoard = new Board(9, 9);
         enemyBoard = new Board(9, 9);
@@ -56,14 +56,17 @@ public class Player
     {
         if (playerBoard.getGameBoard()[row][col].containsBoat())
         {
+            playerBoard.getGameBoard()[row][col].setHit(true);
+            playerBoard.getGameBoard()[row][col].setEmpty(false);
             for (int i = 0; i < boats.size(); i++)
             {
-                for (int j = 0; j < boats.get(i).getLength(); j++)
+                for (int j = 0; j < boats.get(i).getSpots().size(); j++)
                 {
-                    if (boats.get(i).getSpots()[j] == playerBoard.getGameBoard()[row][col] && !(hitSpots.contains(playerBoard.getGameBoard()[row][col])))
+                    if (!(boats.get(i).isDead()) && !(hitSpots.contains(boats.get(i).getSpots().get(j))))
                     {
-                        hitSpots.add(playerBoard.getGameBoard()[row][col]);
+                        hitSpots.add(boats.get(i).getSpots().get(j));
                         boats.get(i).loseHealth();
+                        System.out.println("Health = " + boats.get(i).getHealth());
                         if (boats.get(i).getHealth() == 0)
                         {
                             boats.get(i).setDead(true);
@@ -71,8 +74,6 @@ public class Player
                     }
                 }
             }
-            playerBoard.getGameBoard()[row][col].setHit(true);
-            playerBoard.getGameBoard()[row][col].setEmpty(false);
         }
         else
         {
@@ -117,7 +118,7 @@ public class Player
                 {
                     for (int i = r1; i <= boats.get(j).getLength(); i++)
                     {
-                        if (r1 + boats.size() > playerBoard.getGameBoard().length || playerBoard.getGameBoard()[i][c1].containsBoat() == true)
+                        if (r1 + boats.size() > playerBoard.getGameBoard().length || playerBoard.getGameBoard()[i][c1].containsBoat())
                         {
                             System.out.println("Invalid Selection");
                             playerBoard.drawBoard();
@@ -126,10 +127,7 @@ public class Player
                         {
                             playerBoard.getGameBoard()[i][c1].setContainsBoat(true);
                             playerBoard.getGameBoard()[i][c1].setEmpty(false);
-                            for (int k = 0; k < boats.get(j).getLength(); k++)
-                            {
-                                boats.get(j).getSpots()[k] = playerBoard.getGameBoard()[i][c1];
-                            }
+                            boats.get(j).getSpots().add(playerBoard.getGameBoard()[i][c1]);
                             go = false;
                         }
                     }
@@ -148,10 +146,7 @@ public class Player
                         {
                             playerBoard.getGameBoard()[r1][i].setContainsBoat(true);
                             playerBoard.getGameBoard()[r1][i].setEmpty(false);
-                            for (int k = 0; k < boats.get(j).getLength(); k++)
-                            {
-                                boats.get(j).getSpots()[k] = playerBoard.getGameBoard()[r1][i];
-                            }
+                            boats.get(j).getSpots().add(playerBoard.getGameBoard()[i][c1]);
                             go = false;
                         }
                     }

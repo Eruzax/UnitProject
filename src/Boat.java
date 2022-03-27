@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class Boat
 {
     private int length;
     private String name;
     private int health;
     private boolean dead;
-    private Space[] spots;
+    private ArrayList<Space> spots;
 
     public Boat(String n, int l)
     {
@@ -12,10 +14,10 @@ public class Boat
         name = n;
         length = l;
         dead = false;
-        spots = new Space[l];
+        spots = new ArrayList<Space>();
     }
 
-    public Space[] getSpots()
+    public ArrayList<Space> getSpots()
     {
         return spots;
     }
