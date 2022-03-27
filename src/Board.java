@@ -34,73 +34,69 @@ public class Board
             {
                 if (j == 8)
                 {
-                    if(i == 0 && j == 0)
+                    if (i == 0)
                     {
-                        System.out.println("  | ");
-                    }
-                    else if (i == 0)
-                    {
-                        System.out.println(colCounter + " | ");
+                        System.out.println(" " + colCounter + "  | ");
                         colCounter++;
                     }
                     else if (j == 1)
                     {
-                        System.out.println(rowToLetter(rowCounter) + " | ");
+                        System.out.println(" " + rowToLetter(rowCounter) + "  | ");
                         rowCounter++;
-                    }
-                    else if (gameBoard[i][j].containsBoat())
-                    {
-                        System.out.println("■ | ");
                     }
                     else if (gameBoard[i][j].getHit())
                     {
-                        System.out.println("● | ");
+                        System.out.println(" ⬤  | ");
+                    }
+                    else if (gameBoard[i][j].containsBoat())
+                    {
+                        System.out.println(" ⬛  | ");
                     }
                     else if (gameBoard[i][j].getMiss())
                     {
-                        System.out.println("○ | ");
+                        System.out.println(" ◯  | ");
                     }
                     else if(gameBoard[i][j].getEmpty())
                     {
-                        System.out.println("〰 | ");
+                        System.out.println(" 〰  | ");
                     }
                 }
                 else
                 {
                     if(i == 0 && j == 0)
                     {
-                        System.out.print("  | ");
+                        System.out.print("    | ");
                     }
                     else if (i == 0)
                     {
-                        System.out.print(colCounter + " | ");
+                        System.out.print("  " + colCounter + "  | ");
                         colCounter++;
                     }
                     else if (j == 0)
                     {
-                        System.out.print(rowToLetter(rowCounter) + " | ");
+                        System.out.print(" " + rowToLetter(rowCounter) + "  | ");
                         rowCounter++;
-                    }
-                    else if (gameBoard[i][j].containsBoat())
-                    {
-                        System.out.print("■ | ");
                     }
                     else if (gameBoard[i][j].getHit())
                     {
-                        System.out.print("● | ");
+                        System.out.print(" ⬤  | ");
+                    }
+                    else if (gameBoard[i][j].containsBoat())
+                    {
+                        System.out.print(" ⬛  | ");
                     }
                     else if (gameBoard[i][j].getMiss())
                     {
-                        System.out.print("○ | ");
+                        System.out.print(" ◯  | ");
                     }
                     else if (gameBoard[i][j].getEmpty())
                     {
-                        System.out.print("〰 | ");
+                        System.out.print(" 〰  | ");
                     }
                 }
 
             }
-            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------------------------");
         }
     }
 
@@ -114,65 +110,61 @@ public class Board
             {
                 if (j == 8)
                 {
-                    if(i == 0 && j == 0)
+                    if (i == 0)
                     {
-                        System.out.println("  | ");
-                    }
-                    else if (i == 0)
-                    {
-                        System.out.println(colCounter + " | ");
+                        System.out.println("  " + colCounter + "  | ");
                         colCounter++;
                     }
                     else if (j == 1)
                     {
-                        System.out.println(rowToLetter(rowCounter) + " | ");
+                        System.out.println(" " + rowToLetter(rowCounter) + "  | ");
                         rowCounter++;
                     }
                     else if (gameBoard[i][j].getHit())
                     {
-                        System.out.println("● | ");
+                        System.out.println(" ●  | ");
                     }
                     else if (gameBoard[i][j].getMiss())
                     {
-                        System.out.println("○ | ");
+                        System.out.println(" ○  | ");
                     }
                     else if(gameBoard[i][j].getEmpty())
                     {
-                        System.out.println("〰 | ");
+                        System.out.println(" 〰  | ");
                     }
                 }
                 else
                 {
                     if(i == 0 && j == 0)
                     {
-                        System.out.print("  | ");
+                        System.out.print("   | ");
                     }
                     else if (i == 0)
                     {
-                        System.out.print(colCounter + " | ");
+                        System.out.print("  " + colCounter + "  | ");
                         colCounter++;
                     }
                     else if (j == 0)
                     {
-                        System.out.print(rowToLetter(rowCounter) + " | ");
+                        System.out.print(" " + rowToLetter(rowCounter) + "  | ");
                         rowCounter++;
                     }
                     else if (gameBoard[i][j].getHit())
                     {
-                        System.out.print("● | ");
+                        System.out.print(" ●  | ");
                     }
                     else if (gameBoard[i][j].getMiss())
                     {
-                        System.out.print("○ | ");
+                        System.out.print(" ○  | ");
                     }
                     else if (gameBoard[i][j].getEmpty())
                     {
-                        System.out.print("〰 | ");
+                        System.out.print(" 〰  | ");
                     }
                 }
 
             }
-            System.out.println("----------------------------------------");
+            System.out.println("-----------------------------------------------------------");
         }
     }
     private String rowToLetter(int row)

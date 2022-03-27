@@ -47,6 +47,11 @@ public class Player
         return enemyBoard;
     }
 
+    public ArrayList<Boat> getBoats()
+    {
+        return boats;
+    }
+
     public void takeHit(int row, int col)
     {
         if (playerBoard.getGameBoard()[row][col].containsBoat())
@@ -59,6 +64,10 @@ public class Player
                     {
                         hitSpots.add(playerBoard.getGameBoard()[row][col]);
                         boats.get(i).loseHealth();
+                        if (boats.get(i).getHealth() == 0)
+                        {
+                            boats.get(i).setDead(true);
+                        }
                     }
                 }
             }
@@ -79,12 +88,14 @@ public class Player
             enemyBoard.getGameBoard()[row][col].setHit(true);
             enemyBoard.getGameBoard()[row][col].setEmpty(false);
             System.out.println("HIT!");
+            System.out.println();
         }
         else
         {
             enemyBoard.getGameBoard()[row][col].setMiss(true);
             enemyBoard.getGameBoard()[row][col].setEmpty(false);
             System.out.println("MISS!");
+            System.out.println();
         }
     }
 
@@ -154,41 +165,37 @@ public class Player
     {
         int row = 0;
 
-        if (str.substring(0, 1).equals("A"))
+        if (str.substring(0, 1).equals("A") || str.substring(0, 1).equals("a"))
         {
             row = 1;
         }
-        else if (str.substring(0, 1).equals("B"))
+        else if (str.substring(0, 1).equals("B")|| str.substring(0, 1).equals("b"))
         {
             row = 2;
         }
-        else if (str.substring(0, 1).equals("C"))
+        else if (str.substring(0, 1).equals("C")|| str.substring(0, 1).equals("c"))
         {
             row = 3;
         }
-        else if (str.substring(0, 1).equals("D"))
+        else if (str.substring(0, 1).equals("D")|| str.substring(0, 1).equals("d"))
         {
             row = 4;
         }
-        else if (str.substring(0, 1).equals("E"))
+        else if (str.substring(0, 1).equals("E")|| str.substring(0, 1).equals("e"))
         {
             row = 5;
         }
-        else if (str.substring(0, 1).equals("F"))
+        else if (str.substring(0, 1).equals("F")|| str.substring(0, 1).equals("f"))
         {
             row = 6;
         }
-        else if (str.substring(0, 1).equals("G"))
+        else if (str.substring(0, 1).equals("G")|| str.substring(0, 1).equals("g"))
         {
             row = 7;
         }
-        else if (str.substring(0, 1).equals("H"))
+        else if (str.substring(0, 1).equals("H")|| str.substring(0, 1).equals("h"))
         {
             row = 8;
-        }
-        else if (str.substring(0, 1).equals("I"))
-        {
-            row = 9;
         }
         return row;
     }
@@ -227,10 +234,6 @@ public class Player
         else if (str.substring(1).equals("8"))
         {
             col = 8;
-        }
-        else if (str.substring(1).equals("9"))
-        {
-            col = 9;
         }
         return col;
     }

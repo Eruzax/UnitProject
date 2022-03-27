@@ -37,7 +37,14 @@ public class Boat
 
     public void loseHealth()
     {
-        health--;
+        if (health-- < 0)
+        {
+            health = 0;
+        }
+        else
+        {
+            health--;
+        }
     }
 
     public boolean isDead()
