@@ -62,7 +62,7 @@ public class Player
             {
                 for (int j = 0; j < boats.get(i).getSpots().size(); j++)
                 {
-                    if (!(boats.get(i).isDead()) && !(hitSpots.contains(boats.get(i).getSpots().get(j))))
+                    if (!(boats.get(i).isDead()) && !(hitSpots.contains(boats.get(i).getSpots().get(j))) && boats.get(i).getSpots().get(j) == playerBoard.getGameBoard()[row][col])
                     {
                         hitSpots.add(boats.get(i).getSpots().get(j));
                         boats.get(i).loseHealth();
