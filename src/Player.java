@@ -58,22 +58,6 @@ public class Player
         {
             playerBoard.getGameBoard()[row][col].setHit(true);
             playerBoard.getGameBoard()[row][col].setEmpty(false);
-            for (int i = 0; i < boats.size(); i++)
-            {
-                for (int j = 0; j < boats.get(i).getSpots().size(); j++)
-                {
-                    if (!(boats.get(i).isDead()) && !(hitSpots.contains(boats.get(i).getSpots().get(j))) && boats.get(i).getSpots().get(j) == playerBoard.getGameBoard()[row][col])
-                    {
-                        hitSpots.add(boats.get(i).getSpots().get(j));
-                        boats.get(i).loseHealth();
-                        System.out.println("Health = " + boats.get(i).getHealth());
-                        if (boats.get(i).getHealth() == 0)
-                        {
-                            boats.get(i).setDead(true);
-                        }
-                    }
-                }
-            }
         }
         else
         {
@@ -108,7 +92,7 @@ public class Player
             boolean go = true;
             while(go)
             {
-                System.out.println("Where do you want to put the start of the " + boats.get(j).getName()+ " (" + boats.get(j).getLength() + ")");
+                System.out.println(getName() + ", where do you want to put the start of the " + boats.get(j).getName()+ " (" + boats.get(j).getLength() + ")");
                 String start = scan.nextLine();
                 System.out.println("(H)orizontal or (V)ertical?");
                 String way = scan.nextLine().toUpperCase();
@@ -146,7 +130,7 @@ public class Player
                         {
                             playerBoard.getGameBoard()[r1][i].setContainsBoat(true);
                             playerBoard.getGameBoard()[r1][i].setEmpty(false);
-                            boats.get(j).getSpots().add(playerBoard.getGameBoard()[i][c1]);
+                            boats.get(j).getSpots().add(playerBoard.getGameBoard()[r1][i]);
                             go = false;
                         }
                     }
@@ -158,78 +142,75 @@ public class Player
 
     public static int row(String str)
     {
-        int row = 0;
-
         if (str.substring(0, 1).equals("A") || str.substring(0, 1).equals("a"))
         {
-            row = 1;
+            return 1;
         }
         else if (str.substring(0, 1).equals("B")|| str.substring(0, 1).equals("b"))
         {
-            row = 2;
+            return 2;
         }
         else if (str.substring(0, 1).equals("C")|| str.substring(0, 1).equals("c"))
         {
-            row = 3;
+            return 3;
         }
         else if (str.substring(0, 1).equals("D")|| str.substring(0, 1).equals("d"))
         {
-            row = 4;
+            return 4;
         }
         else if (str.substring(0, 1).equals("E")|| str.substring(0, 1).equals("e"))
         {
-            row = 5;
+            return 5;
         }
         else if (str.substring(0, 1).equals("F")|| str.substring(0, 1).equals("f"))
         {
-            row = 6;
+            return 6;
         }
         else if (str.substring(0, 1).equals("G")|| str.substring(0, 1).equals("g"))
         {
-            row = 7;
+            return 7;
         }
         else if (str.substring(0, 1).equals("H")|| str.substring(0, 1).equals("h"))
         {
-            row = 8;
+            return 8;
         }
-        return row;
+        return 1;
     }
 
     public static int col(String str)
     {
-        int col = 0;
         if (str.substring(1).equals("1"))
         {
-            col = 1;
+            return 1;
         }
         else if (str.substring(1).equals("2"))
         {
-            col = 2;
+            return 2;
         }
         else if (str.substring(1).equals("3"))
         {
-            col = 3;
+            return 3;
         }
         else if (str.substring(1).equals("4"))
         {
-            col = 4;
+            return 4;
         }
         else if (str.substring(1).equals("5"))
         {
-            col = 5;
+            return 5;
         }
         else if (str.substring(1).equals("6"))
         {
-            col = 6;
+            return 6;
         }
         else if (str.substring(1).equals("7"))
         {
-            col = 7;
+            return 7;
         }
         else if (str.substring(1).equals("8"))
         {
-            col = 8;
+            return 8;
         }
-        return col;
+        return 1;
     }
 }
