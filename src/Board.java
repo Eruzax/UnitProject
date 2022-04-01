@@ -1,14 +1,22 @@
+/**
+ * This class prints out the game board as it updates.
+ * It also sets each space object in the array of spaces to its correct value.
+ * @
+ * @author Kaden Kwan
+ */
+
 import java.lang.reflect.Array;
 public class Board
 {
-    public Space[][] getGameBoard() {
-        return gameBoard;
-    }
-
     private Space[][] gameBoard;
     private int numRows;
     private int numCols;
 
+    /**
+     * This is the constructor class which creates the 2D array of Spaces
+     * @param rows The number of rows of the 2d Array
+     * @param cols The number of columns of the 2d Array
+     */
     public Board(int rows, int cols)
     {
         numRows = rows;
@@ -24,6 +32,18 @@ public class Board
         }
     }
 
+    /**
+     * This is a getter method to return the game board
+     * @return Space[][] This returns the game board
+     */
+    public Space[][] getGameBoard()
+    {
+        return gameBoard;
+    }
+
+    /**
+     * This method prints the initial game board based on the values of the space at different indexes
+     */
     public void drawBoard()
     {
         int rowCounter = 1;
@@ -100,6 +120,9 @@ public class Board
         }
     }
 
+    /**
+     * This sets each Space index of the game board to its correct value each time there is an update
+     */
     public void setBoard()
     {
         int rowCounter = 1;
@@ -167,6 +190,12 @@ public class Board
             System.out.println("-----------------------------------------------------------");
         }
     }
+
+    /**
+     * This is a helper method that is used to help determine what to print on the board at different rows
+     * @param row This is an int that is converted to a corresponding letter
+     * @return String This returns a letter based on the int given
+     */
     private String rowToLetter(int row)
     {
         if (row == 1)

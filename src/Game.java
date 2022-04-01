@@ -1,5 +1,8 @@
-import java.util.Scanner;
+/**
+ * @author Kaden Kwan
+ */
 
+import java.util.Scanner;
 
 public class Game
 {

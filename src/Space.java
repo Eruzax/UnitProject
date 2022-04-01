@@ -1,3 +1,7 @@
+/**
+ * @author Kaden Kwan
+ */
+
 import java.lang.reflect.Array;
 
 public class Space
