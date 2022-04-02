@@ -1,10 +1,11 @@
-/**
- * @author Kaden Kwan
- */
-
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
+
+/**
+ * This is the Player class which creates the players
+ * @author Kaden Kwan
+ */
 public class Player
 {
     ArrayList<Space> hitSpots;
@@ -19,6 +20,10 @@ public class Player
     private Board enemyBoard;
     Scanner scan = new Scanner(System.in);
 
+    /**
+     * Player constructor
+     * @param n A String that represents the name of the player
+     */
     public Player(String n)
     {
         hitSpots = new ArrayList<Space>();
@@ -38,24 +43,45 @@ public class Player
         boats.add(destroyer);
     }
 
+    /**
+     * Name getter method
+     * @return Returns the name of the player
+     */
     public String getName()
     {
         return name;
     }
 
+    /**
+     * playerBoard getter method
+     * @return Returns the playerBoard of the player
+     */
     public Board getPlayerBoard() {
         return playerBoard;
     }
 
+    /**
+     * enemyBoard getter method
+     * @return Returns the enemyBoard of the player
+     */
     public Board getEnemyBoard() {
         return enemyBoard;
     }
 
+    /**
+     * boats getter method
+     * @return Returns an array list of the player's boats
+     */
     public ArrayList<Boat> getBoats()
     {
         return boats;
     }
 
+    /**
+     * This method updates the playerBoard when the enemy player attacks
+     * @param row This is the row of where the playerBoard is taking a hit
+     * @param col This is the column of where the playerBoard is taking a hit
+     */
     public void takeHit(int row, int col)
     {
         if (playerBoard.getGameBoard()[row][col].containsBoat())
@@ -70,6 +96,12 @@ public class Player
         }
     }
 
+    /**
+     * This method allows the player to attack the enemy and updates the board
+     * @param b This is the board that the enemy is attacking
+     * @param row This is the row of where the player is attacking
+     * @param col This is the column of where the player is attacking
+     */
     public void attack(Board b, int row, int col)
     {
         if (b.getGameBoard()[row][col].containsBoat())
@@ -88,6 +120,9 @@ public class Player
         }
     }
 
+    /**
+     * This sets the ship on the playerBoard depending on what the player inputs
+     */
     public void setShips()
     {
         Scanner scan = new Scanner(System.in);
@@ -144,6 +179,11 @@ public class Player
         }
     }
 
+    /**
+     * This is a static method used to take a string and change it to the corresponding number
+     * @param str This is a String that is used to convert to an int
+     * @return This returns an int representing what row str would be
+     */
     public static int row(String str)
     {
         if (str.substring(0, 1).equals("A") || str.substring(0, 1).equals("a"))
@@ -181,6 +221,11 @@ public class Player
         return 1;
     }
 
+    /**
+     * This is a static method used to take a string and change it to the corresponding number
+     * @param str This is a String that is used to convert to an int
+     * @return This returns an int representing what Column str would be
+     */
     public static int col(String str)
     {
         if (str.substring(1).equals("1"))

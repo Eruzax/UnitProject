@@ -1,11 +1,11 @@
+import java.lang.reflect.Array;
+
 /**
  * This class prints out the game board as it updates.
  * It also sets each space object in the array of spaces to its correct value.
- * @
  * @author Kaden Kwan
  */
 
-import java.lang.reflect.Array;
 public class Board
 {
     private Space[][] gameBoard;
@@ -13,7 +13,7 @@ public class Board
     private int numCols;
 
     /**
-     * This is the constructor class which creates the 2D array of Spaces
+     * This is the Board constructor which creates the 2D array of Spaces
      * @param rows The number of rows of the 2d Array
      * @param cols The number of columns of the 2d Array
      */
@@ -121,7 +121,7 @@ public class Board
     }
 
     /**
-     * This sets each Space index of the game board to its correct value each time there is an update
+     * This sets each Space index of the game board to its correct value each time there is an update and prints the board
      */
     public void setBoard()
     {

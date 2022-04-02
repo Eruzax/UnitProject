@@ -1,15 +1,19 @@
-/**
- * @author Kaden Kwan
- */
-
 import java.util.Scanner;
 
+/**
+ * This is the main logic of the game
+ * @author Kaden Kwan
+ */
 public class Game
 {
     private Player player1;
     private Player player2;
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * This welcomes the players and asks for names to create the players
+     * Calls theGame() method
+     */
     public void start()
     {
         System.out.println("Welcome to BattleShip!");
@@ -22,6 +26,9 @@ public class Game
         theGame();
     }
 
+    /**
+     * This is the main logic of the game
+     */
     public void theGame()
     {
         boolean running = true;
@@ -76,6 +83,11 @@ public class Game
 
     }
 
+    /**
+     * This is a helper class used to check how many dead ships each player has
+     * @param p This is the player object that is being checked
+     * @return Returns an int of how many dead ship player p has
+     */
     private int checkDeadShips(Player p)
     {
         int counter = 0;
